@@ -13,8 +13,9 @@ namespace LeagueSandbox.GameServer.Logic.GameObjects
         private string name;
         private string type;
         private float z, dirX, dirY, dirZ, unk1, unk2;
+        private byte skin;
 
-        public LevelProp(Game game, uint id, float x, float y, float z, float dirX, float dirY, float dirZ, float unk1, float unk2, string name, string type) : base(game, id, x, y, 0)
+        public LevelProp(Game game, uint id, float x, float y, float z, float dirX, float dirY, float dirZ, float unk1, float unk2, string name, string type, byte skin = 0) : base(game, id, x, y, 0)
         {
             this.z = z;
             this.dirX = dirX;
@@ -24,6 +25,7 @@ namespace LeagueSandbox.GameServer.Logic.GameObjects
             this.unk2 = unk2;
             this.name = name;
             this.type = type;
+            this.skin = skin;
         }
 
         public override float GetZ()
@@ -68,6 +70,10 @@ namespace LeagueSandbox.GameServer.Logic.GameObjects
         public string getType()
         {
             return type;
+        }
+        public byte getSkin()
+        {
+            return skin;
         }
 
     }
